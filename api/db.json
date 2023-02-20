@@ -1,4 +1,4 @@
-{   
+{ 
     "movies": [
         {
         "posterUrl":
@@ -39,7 +39,7 @@
         "releaseYear": "1999",
         "website": "https://www.warnerbros.com/movies/matrix",
         "genre": "Sci-Fi"
-        }
+        },
         {
         "posterUrl":
         "https://res.cloudinary.com/dlzuobe8h/image/upload/v1651625519/intro%20to%20react%20workshop/81zHy_InA5L._AC_SY679__ddkmqq.jpg",
