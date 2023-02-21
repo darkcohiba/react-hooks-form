@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
+import useFetch from "../hooks/useFetchHook";
 
 function Home() {
-    const [movies, setMovies] = useState([])
+    const [url, setUrl] = useState("http://localhost:3000/movies")
 
-    useEffect(()=>{
-        fetch('http://localhost:3000/movies')
-        .then(response => response.json())
-        .then(data => setMovies(data))
-    },[])
+    const { isLoading, serverError, apiData } = useFetch(url);
 
+    if (isLoading) return <h2>Loading...</h2>
+
+    if (serverError) return <h2>ERROR...</h2>
+    
     return (
         <div>
-            {movies?.map(movie=>(
+            {apiData?.map(movie=>(
             <MovieCard 
                 movie={movie}
                 key={movie.id}
