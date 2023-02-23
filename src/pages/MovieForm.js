@@ -1,18 +1,26 @@
 import { useForm } from "react-hook-form";
-
+import postData from "../hooks/usePostHook";
 
 function MovieForm() {
 
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors }
     } = useForm();
 
 
     const onSubmit = (data) => {
         console.log(data);
+        fetch("http://localhost:3000/movies",{
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        // postData("http://localhost:3000/movies", data)
     };
 
     return (
