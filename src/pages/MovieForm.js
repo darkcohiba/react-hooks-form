@@ -14,11 +14,10 @@ function MovieForm() {
         console.log(data);
         fetch("http://localhost:3000/movies",{
             method: 'POST',
-            mode: 'cors',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({data})
         })
         // postData("http://localhost:3000/movies", data)
     };
