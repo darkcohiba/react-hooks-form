@@ -17,8 +17,12 @@ function MovieForm() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({data})
+            body: JSON.stringify(data)
         })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(` error: ${err}`))
+        //data coming through with ID
         // postData("http://localhost:3000/movies", data)
     };
 
@@ -45,7 +49,6 @@ function MovieForm() {
                 <input {...register("Website", { required: true })} />
                 {errors.Website && <p>This field is required</p>}
                 <br></br>
-                
                 <input type="submit" />
             </form>
             
