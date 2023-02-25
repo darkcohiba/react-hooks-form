@@ -11,7 +11,7 @@ function MovieForm() {
 
 
     const onSubmit = (data) => {
-        console.log(data);
+        console.log({...data, id: data.releaseYear});
         fetch("http://localhost:3000/movies",{
             method: 'POST',
             headers: {
@@ -22,7 +22,6 @@ function MovieForm() {
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(err => console.log(` error: ${err}`))
-        //data coming through with ID
         // postData("http://localhost:3000/movies", data)
     };
 
