@@ -11,18 +11,18 @@ function MovieForm() {
 
 
     const onSubmit = (data) => {
-        console.log({...data, id: data.releaseYear});
-        fetch("http://localhost:3000/movies",{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({...data, id: data.releaseYear})
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(` error: ${err}`))
-        // postData("http://localhost:3000/movies", data)
+        // console.log({...data, id: data.releaseYear});
+        // fetch("http://localhost:3000/movies",{
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({...data, id: data.releaseYear})
+        // })
+        // .then(response => response.json())
+        // .then(data => console.log(data))
+        // .catch(err => console.log(` error: ${err}`))
+        postData("http://localhost:3000/movies", {...data, id: data.releaseYear})
     };
 
     return (
