@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import postData from "../hooks/usePostHook";
 
 function MovieForm() {
+    const [id, setId] = useState(0)
 
     const {
         register,
@@ -11,6 +13,7 @@ function MovieForm() {
 
 
     const onSubmit = (data) => {
+        setId(id + 1)
         // console.log({...data, id: data.releaseYear});
         // fetch("http://localhost:3000/movies",{
         //     method: 'POST',
@@ -22,7 +25,7 @@ function MovieForm() {
         // .then(response => response.json())
         // .then(data => console.log(data))
         // .catch(err => console.log(` error: ${err}`))
-        postData("http://localhost:3000/movies", {...data, id: data.releaseYear})
+        postData("http://localhost:3000/movies", {...data, id: id})
     };
 
     return (
