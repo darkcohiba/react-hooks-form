@@ -1,6 +1,5 @@
 async function postData(url = '', data = {}) {
     // Default options are marked with *
-    console.log(url)
         const response = await fetch(url, {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             mode: 'cors', // no-cors, *cors, same-origin
@@ -14,7 +13,7 @@ async function postData(url = '', data = {}) {
             // referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
             body: JSON.stringify(data) // body data type must match "Content-Type" header
         });
-    console.log(response)
+    console.log(response.json())
     return response.json(); // parses JSON response into native JavaScript objects
 }
 
