@@ -42,3 +42,4 @@ Use the error and loading states like this to prevent the page from loading with
     if (serverError) return <h2>ERROR...</h2>
 ```
 
+## UseFetchHook
