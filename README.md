@@ -18,7 +18,7 @@ You may also see any lint errors in the console.
 
 ## Third Step: 
 Open a new terminal and run
-`npm run server`
+`npm run json`
 
 Lauches a local server with the db.json under the api directory
 Open [http://localhost:3000/movies](http://localhost:3000/movies) to view it in your browser.

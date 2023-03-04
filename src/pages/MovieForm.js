@@ -32,23 +32,23 @@ function MovieForm() {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Movie Name:</label>
-                <input {...register("name", { required: true })} />
+                <input placeholder="enter your name" {...register("name", { required: true })} />
                 {errors.name && <p>This field is required</p>}
                 <br></br>
                 <label>Movie Genre:</label>
-                <input {...register("genre", { required: true })} />
+                <input placeholder="movie genre" {...register("genre", { required: true })} />
                 {errors.genre && <p>This field is required</p>}
                 <br></br>
                 <label>Movie Release Year:</label>
-                <input {...register("releaseYear", { required: true, maxLength: 4 })} />
+                <input placeholder="movie release year" {...register("releaseYear", { required: true, maxLength: 4 })} />
                 {errors.releaseYear && <p>This field is required and must be no longer then 4 numbers</p>}
                 <br></br>
                 <label>Movie Poster URL:</label>
-                <input {...register("PosterURL", { required: true })} />
+                <input placeholder="movie poster URL" {...register("PosterURL", { required: true })} />
                 {errors.PosterURL && <p>This field is required</p>}
                 <br></br>
                 <label>Movie Website:</label>
-                <input {...register("Website", { required: true })} />
+                <input placeholder="website" {...register("Website", { required: true })} />
                 {errors.Website && <p>This field is required</p>}
                 <br></br>
                 <input type="submit" />
